@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+.dark {
+  color:black
+}
+
 body {
   margin: 0;
   background: var(--bg);
