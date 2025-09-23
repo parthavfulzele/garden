@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taste of the Garden • Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <a class="brand__link" href="index.html">
+          <span class="brand__icon" aria-hidden="true">🌱</span>
+          <span class="brand__text">Taste of the Garden</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="nutrition.html">Nutrition</a></li>
+          <li><a href="event.html">Events</a></li>
+        </ul>
+        <a class="nav-cta" href="index.html#newsletter">Join the Garden</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Seasonal produce catalog</h1>
+        <p>Explore what is currently growing strong. Filter by category or season to plan your next CSA pickup or farmers market visit.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <form class="filters" aria-label="Catalog filters">
+        <div class="filters__group">
+          <label for="filter-category">Category</label>
+          <select id="filter-category" name="category">
+            <option value="all">All produce</option>
+            <option value="vegetable">Vegetables</option>
+            <option value="fruit">Fruits</option>
+            <option value="herb">Herbs</option>
+            <option value="flower">Edible flowers</option>
+          </select>
+        </div>
+        <div class="filters__group">
+          <label for="filter-season">Season</label>
+          <select id="filter-season" name="season">
+            <option value="all">Year-round</option>
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+            <option value="winter">Winter</option>
+          </select>
+        </div>
+        <div class="filters__group filters__group--search">
+          <label for="filter-search">Search</label>
+          <input id="filter-search" name="search" type="search" placeholder="Search by name or use" />
+        </div>
+      </form>
+
+      <div id="catalog-status" class="catalog-empty">Enable JavaScript to explore the full catalog.</div>
+      <div id="catalog-grid" class="catalog-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section section--accent">
+      <div class="container split">
+        <div>
+          <h2>CSA shares that fit your table</h2>
+          <p>Choose weekly or biweekly pickups. We harvest to order so your basket reflects what the soil is ready to share.</p>
+          <ul class="list">
+            <li>Small share feeds 1–2 produce lovers</li>
+            <li>Family share keeps 3–4 folks stocked for the week</li>
+            <li>Add-on eggs, mushrooms, and flower bunches anytime</li>
+          </ul>
+        </div>
+        <aside class="note">
+          <h3>Have a favorite?</h3>
+          <p>Email <a href="mailto:orders@tasteofthegarden.com">orders@tasteofthegarden.com</a> and we will tuck it into your next pickup.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year"></span> Taste of the Garden. All rights reserved.</p>
+      <nav aria-label="Footer">
+        <a href="catalog.html">CSA Shares</a>
+        <a href="nutrition.html">Nutrition Guide</a>
+        <a href="event.html">Visit the Garden</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const produceCatalog = [
+      {
+        name: 'Rainbow Chard',
+        category: 'vegetable',
+        season: 'spring',
+        price: 4.5,
+        unit: 'bundle',
+        description: 'Tender stems in jewel tones with mild earthy sweetness.',
+        uses: ['Quick sauté with garlic', 'Layer into grain bowls'],
+      },
+      {
+        name: 'Sunrise Cherry Tomatoes',
+        category: 'fruit',
+        season: 'summer',
+        price: 5,
+        unit: 'pint',
+        description: 'Candy-sweet tomatoes in yellow, orange, and blush.',
+        uses: ['Snack straight from the vine', 'Roast for focaccia'],
+      },
+      {
+        name: 'Genovese Basil',
+        category: 'herb',
+        season: 'summer',
+        price: 3.5,
+        unit: 'bunch',
+        description: 'Classic Italian basil with glossy, aromatic leaves.',
+        uses: ['Blend into pesto', 'Tuck into caprese'],
+      },
+      {
+        name: 'Buttercrisp Lettuce',
+        category: 'vegetable',
+        season: 'spring',
+        price: 4,
+        unit: 'head',
+        description: 'Soft, velvety leaves perfect for wraps and salads.',
+        uses: ['Build lettuce cups', 'Pair with citrus dressings'],
+      },
+      {
+        name: 'Golden Beets',
+        category: 'vegetable',
+        season: 'fall',
+        price: 4.75,
+        unit: 'bunch',
+        description: 'Sunny beets with mellow sweetness and tender greens.',
+        uses: ['Roast with rosemary', 'Shave raw into salads'],
+      },
+      {
+        name: 'Candy Stripe Figs',
+        category: 'fruit',
+        season: 'fall',
+        price: 6,
+        unit: 'half-pint',
+        description: 'Limited heirloom figs with vanilla-honey notes.',
+        uses: ['Serve with goat cheese', 'Caramelize for desserts'],
+      },
+      {
+        name: 'Smoked Paprika Peppers',
+        category: 'vegetable',
+        season: 'summer',
+        price: 5.25,
+        unit: 'quart',
+        description: 'Deep red peppers sun-dried then lightly smoked on oak.',
+        uses: ['Stuff with quinoa', 'Blend into romesco'],
+      },
+      {
+        name: 'Citrus Gem Marigolds',
+        category: 'flower',
+        season: 'summer',
+        price: 4,
+        unit: 'clamshell',
+        description: 'Edible petals with bright tangerine zest and finish.',
+        uses: ['Top cakes and tarts', 'Infuse into syrups'],
+      },
+      {
+        name: 'Shiitake Mushrooms',
+        category: 'vegetable',
+        season: 'fall',
+        price: 8,
+        unit: 'pint',
+        description: 'Log-grown mushrooms with savory umami depth.',
+        uses: ['Sear with tamari butter', 'Fold into risotto'],
+      },
+      {
+        name: 'Winter Rainbow Radishes',
+        category: 'vegetable',
+        season: 'winter',
+        price: 3.75,
+        unit: 'bundle',
+        description: 'Crisp roots with peppery bite and watercolor hues.',
+        uses: ['Slice into tacos', 'Quick pickle for bowls'],
+      },
+      {
+        name: 'Scarlet Runner Beans',
+        category: 'vegetable',
+        season: 'summer',
+        price: 9,
+        unit: 'pound',
+        description: 'Velvety beans with chestnut-like texture and speckles.',
+        uses: ['Simmer with aromatics', 'Puree for dips'],
+      },
+      {
+        name: 'Cold Moon Citrus',
+        category: 'fruit',
+        season: 'winter',
+        price: 7,
+        unit: 'bag',
+        description: 'Blend of blood orange, yuzu, and meyer lemon.',
+        uses: ['Press into tonics', 'Candy the peels'],
+      },
+    ];
+
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.getElementById('site-nav');
+    navToggle?.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      siteNav?.classList.toggle('site-nav--open', !expanded);
+    });
+
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.site-nav ul a').forEach((link) => {
+      const target = link.getAttribute('href');
+      if (target === currentPath) {
+        link.classList.add('active');
+      }
+    });
+
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) {
+      footerYear.textContent = new Date().getFullYear();
+    }
+
+    const statusEl = document.getElementById('catalog-status');
+    const gridEl = document.getElementById('catalog-grid');
+    const filterCategory = document.getElementById('filter-category');
+    const filterSeason = document.getElementById('filter-season');
+    const filterSearch = document.getElementById('filter-search');
+
+    const renderCatalog = () => {
+      const category = filterCategory.value;
+      const season = filterSeason.value;
+      const search = filterSearch.value.trim().toLowerCase();
+
+      const matches = produceCatalog.filter((item) => {
+        const matchesCategory = category === 'all' || item.category === category;
+        const matchesSeason = season === 'all' || item.season === season;
+        const matchesSearch =
+          !search ||
+          item.name.toLowerCase().includes(search) ||
+          item.description.toLowerCase().includes(search) ||
+          item.uses.some((use) => use.toLowerCase().includes(search));
+
+        return matchesCategory && matchesSeason && matchesSearch;
+      });
+
+      gridEl.innerHTML = '';
+
+      if (matches.length === 0) {
+        statusEl.hidden = false;
+        statusEl.textContent = 'No produce matches your filters just yet.';
+        return;
+      }
+
+      statusEl.hidden = true;
+      statusEl.textContent = '';
+
+      const fragment = document.createDocumentFragment();
+      matches.forEach((item) => {
+        const card = document.createElement('article');
+        card.className = 'catalog-card';
+        card.innerHTML = `
+          <div class="catalog-card__header">
+            <h2>${item.name}</h2>
+            <span class="catalog-card__price">${formatter.format(item.price)} / ${item.unit}</span>
+          </div>
+          <p>${item.description}</p>
+          <div class="catalog-card__meta">
+            <span class="catalog-card__chip">${item.category}</span>
+            <span class="catalog-card__chip">${item.season}</span>
+          </div>
+          <p><strong>Kitchen ideas:</strong> ${item.uses.join(' • ')}</p>
+        `;
+        fragment.appendChild(card);
+      });
+
+      gridEl.appendChild(fragment);
+    };
+
+    [filterCategory, filterSeason, filterSearch].forEach((el) => {
+      el?.addEventListener('input', renderCatalog);
+      el?.addEventListener('change', renderCatalog);
+    });
+
+    statusEl.hidden = true;
+    renderCatalog();
+  </script>
+</body>
+</html>
