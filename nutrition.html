@@ -1,262 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taste of the Garden • Nutrition</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nutrition Mission | Robb Garden</title>
+  <style>
+    :root{ --bg:#f6f5f0; --ink:#1f2a1e; --muted:#5c6b5f; --brand:#2f7d32; --brand-2:#ffb74d; --card:#fff; --ring:#2f7d32; --radius:14px; --shadow:0 10px 25px rgba(0,0,0,.07); --shadow-sm:0 6px 14px rgba(0,0,0,.06); --maxw:1120px; }
+    *{box-sizing:border-box} html,body{height:100%} body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 800px at 90% -10%, rgba(47,125,50,.08), transparent 60%), var(--bg)}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:saturate(1.2) blur(8px);background:color-mix(in srgb,var(--bg) 84%,white);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-badge{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#3ca34e);box-shadow:var(--shadow-sm)}
+    .button{padding:10px 14px;border-radius:12px;background:var(--brand);color:#fff;font-weight:600;box-shadow:0 6px 14px rgba(47,125,50,.2)}
+    h1{font-size:clamp(1.6rem,3.4vw,2.6rem);margin:22px 0 8px}
+    .lead{color:var(--muted);margin:0 0 22px}
+    .section{padding:56px 0}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+    .span-4{grid-column:span 4} .span-6{grid-column:span 6} @media(max-width:900px){.span-4,.span-6{grid-column:1/-1}}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:clip;transition:.12s;display:grid;grid-template-rows:auto 1fr auto}
+    .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+    .card .media{aspect-ratio:16/9;background:#e5efe6}
+    .card .body{padding:18px}
+    .tag{font-size:.85rem;padding:6px 10px;border-radius:999px;background:#eef7ef;color:var(--brand);border:1px solid #dff0e1}
+    footer{padding:32px 0;color:var(--muted);border-top:1px solid rgba(0,0,0,.08);margin-top:28px}
+  </style>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <a class="brand__link" href="index.html">
-          <span class="brand__icon" aria-hidden="true">🌱</span>
-          <span class="brand__text">Taste of the Garden</span>
-        </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Toggle navigation</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="catalog.html">Catalog</a></li>
-          <li><a href="nutrition.html">Nutrition</a></li>
-          <li><a href="event.html">Events</a></li>
-        </ul>
-        <a class="nav-cta" href="index.html#newsletter">Join the Garden</a>
-      </nav>
+  <header>
+    <div class="container nav">
+      <div class="brand"><img src="assets/images/Sustainability-Lockup-Responsive-Orange1.png" alt="Sustainability Department Logo" style="height:60px; display:block;" /></div>
+      <nav><a class="button" href="index.html">Home</a></nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1>Nourish from the soil up</h1>
-        <p>Fresh-picked produce retains more vitamins, minerals, and protective antioxidants. Discover how our growing practices turn every harvest into a nutrition powerhouse.</p>
-      </div>
-    </section>
+  <main class="container">
+    <h1>Nutrition Mission</h1>
+    <p class="lead">Evidence-based micronutrient profiles, simple recipes, and storage tips to help students eat well on a budget.</p>
 
-    <section class="section container">
-      <h2>Color equals phytonutrients</h2>
-      <p>Each hue in your basket signals a unique blend of antioxidants that protect cells and support wellness. Mix and match colors for a complete spectrum.</p>
-      <div class="color-grid">
-        <article class="color-card color-card--crimson">
-          <h3>Crimson + Berry</h3>
-          <p>Lycopene and anthocyanins in tomatoes, beets, and berries can support heart health and recovery.</p>
+    <!-- Color-coded produce overview -->
+    <section class="section">
+      <div class="grid">
+        <article class="card span-6">
+          <div class="media" aria-hidden="true"></div>
+          <div class="body">
+            <h2>Why it matters</h2>
+            <p>We publish per-100 g and per-cup nutrient values with sources (USDA/MyFoodData), plus retaining-nutrients tips.</p>
+            <div style="margin-top:10px" class="tag">Micronutrients</div>
+          </div>
         </article>
-        <article class="color-card color-card--gold">
-          <h3>Sunrise Citrus</h3>
-          <p>Oranges, squash, and sweet peppers deliver vitamin C to strengthen immunity and collagen.</p>
-        </article>
-        <article class="color-card color-card--emerald">
-          <h3>Leafy Greens</h3>
-          <p>Kale, bok choy, and lettuces are packed with folate, vitamin K, and magnesium for strong bones.</p>
-        </article>
-        <article class="color-card color-card--violet">
-          <h3>Indigo Night</h3>
-          <p>Blueberries and purple carrots offer anthocyanins that protect eyesight and brain function.</p>
+        <article class="card span-6">
+          <div class="media" aria-hidden="true"></div>
+          <div class="body">
+            <h2>How to use this guide</h2>
+            <p>Browse produce by color or nutrient focus. Each profile includes quick prep, storage, and zero-waste tips.</p>
+            <div style="margin-top:10px" class="tag">Student-friendly</div>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section section--accent">
-      <div class="container">
-        <div class="section__header">
-          <h2>Quick nutrition wins</h2>
-          <p>Micronutrients that shine in our most-loved crops.</p>
+    <!-- Red Produce Nutrition Section -->
+    <section class="section" id="red-produce">
+      <h2>Red Produce Nutrition Data</h2>
+      <div class="card" style="padding:16px;">
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+          <label for="redSelect"><strong>Select red produce:</strong></label>
+          <select id="redSelect" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,.12); background:#fff;"></select>
         </div>
-        <div class="table">
-          <div class="table__row table__row--head">
-            <span>Crop</span>
-            <span>Star nutrient</span>
-            <span>Benefits</span>
-            <span>Serving idea</span>
-          </div>
-          <div class="table__row">
-            <span>Rainbow Chard</span>
-            <span>Magnesium</span>
-            <span>Supports relaxation and muscle recovery.</span>
-            <span>Toss into a garlicky skillet with chickpeas.</span>
-          </div>
-          <div class="table__row">
-            <span>Shiitake Mushrooms</span>
-            <span>B vitamins</span>
-            <span>Boosts energy metabolism and immune balance.</span>
-            <span>Roast with tamari and sesame oil.</span>
-          </div>
-          <div class="table__row">
-            <span>Cold Moon Citrus</span>
-            <span>Vitamin C</span>
-            <span>Promotes collagen production for skin and joints.</span>
-            <span>Squeeze into warm tea with local honey.</span>
-          </div>
-          <div class="table__row">
-            <span>Scarlet Runner Beans</span>
-            <span>Plant protein</span>
-            <span>Steady energy with fiber to support digestion.</span>
-            <span>Simmer with aromatics for stews and tacos.</span>
-          </div>
+        <div style="overflow:auto;">
+          <table id="redTable" style="width:100%; border-collapse:separate; border-spacing:0 8px;">
+            <tbody></tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <section class="section container">
-      <div class="split">
-        <div>
-          <h2>Build a balanced farm-to-table plate</h2>
-          <ol class="steps">
-            <li><strong>Fill half with produce.</strong> Rotate raw and cooked veggies for diverse nutrients.</li>
-            <li><strong>Add quality protein.</strong> Pair with beans, pasture-raised eggs, or local tempeh.</li>
-            <li><strong>Finish with healthy fats.</strong> Drizzle cold-pressed olive oil or sprinkle toasted seeds.</li>
-          </ol>
-        </div>
-        <aside class="note">
-          <h3>Talk with our nutritionist</h3>
-          <p>Our monthly open office hours cover meal planning, food preservation, and tailoring shares to dietary needs.</p>
-          <a class="btn btn--ghost" href="mailto:nutrition@tasteofthegarden.com">Book a session</a>
-        </aside>
-      </div>
-    </section>
+    <script>
+      (function(){
+        const SELECT_ID = 'redSelect';
+        const TABLE_ID = 'redTable';
 
-    <section class="section container">
-      <h2>Garden nutrition snapshot</h2>
-      <p>Here are a few of the nutrient-dense staples you will find in this season&apos;s harvest.</p>
-      <div class="nutrition-table">
-        <table>
-          <caption>Per 1 cup raw serving</caption>
-          <thead>
-            <tr>
-              <th scope="col">Produce</th>
-              <th scope="col">Serving</th>
-              <th scope="col">Category</th>
-              <th scope="col">Vitamin C (mg)</th>
-              <th scope="col">Iron (mg)</th>
-              <th scope="col">Magnesium (mg)</th>
-              <th scope="col">Omega-3 (g)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Apricots</th>
-              <td>1 cup raw</td>
-              <td>Fruit</td>
-              <td>15.0</td>
-              <td>0.6</td>
-              <td>15.0</td>
-              <td>0.03</td>
-            </tr>
-            <tr>
-              <th scope="row">Arugula</th>
-              <td>1 cup raw</td>
-              <td>Leafy Green</td>
-              <td>3.2</td>
-              <td>0.3</td>
-              <td>9.0</td>
-              <td>0.02</td>
-            </tr>
-            <tr>
-              <th scope="row">Beans (dry)</th>
-              <td>1 cup raw</td>
-              <td>Legume</td>
-              <td>6.0</td>
-              <td>5.1</td>
-              <td>160.0</td>
-              <td>0.55</td>
-            </tr>
-            <tr>
-              <th scope="row">Green Beans</th>
-              <td>1 cup raw</td>
-              <td>Vegetable</td>
-              <td>12.2</td>
-              <td>1.0</td>
-              <td>25.0</td>
-              <td>0.14</td>
-            </tr>
-            <tr>
-              <th scope="row">Beets</th>
-              <td>1 cup raw</td>
-              <td>Root Vegetable</td>
-              <td>6.7</td>
-              <td>1.1</td>
-              <td>30.0</td>
-              <td>0.06</td>
-            </tr>
-            <tr>
-              <th scope="row">Bitter Melon</th>
-              <td>1 cup raw</td>
-              <td>Vegetable</td>
-              <td>78.0</td>
-              <td>1.1</td>
-              <td>22.0</td>
-              <td>0.06</td>
-            </tr>
-            <tr>
-              <th scope="row">Bok Choy</th>
-              <td>1 cup raw</td>
-              <td>Cruciferous</td>
-              <td>44.0</td>
-              <td>0.8</td>
-              <td>19.0</td>
-              <td>0.05</td>
-            </tr>
-            <tr>
-              <th scope="row">Broccoli</th>
-              <td>1 cup raw</td>
-              <td>Cruciferous</td>
-              <td>81.2</td>
-              <td>0.8</td>
-              <td>19.0</td>
-              <td>0.08</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+        const LABELS = {
+          A_RAE_mcg: 'Vitamin A (RAE) (mcg)',
+          B1_mg: 'Vitamin B1 (Thiamin) (mg)',
+          B6_mg: 'Vitamin B6 (mg)',
+          B9_mcg: 'Folate (mcg)',
+          B12_mcg: 'Vitamin B12 (mcg)',
+          C_mg: 'Vitamin C (mg)',
+          Choline_mg: 'Choline (mg)',
+          D_IU: 'Vitamin D (IU)',
+          Iron_mg: 'Iron (mg)',
+          Magnesium_mg: 'Magnesium (mg)',
+          Potassium_mg: 'Potassium (mg)',
+          Selenium_mcg: 'Selenium (mcg)',
+          Zinc_mg: 'Zinc (mg)',
+          Omega3_g: 'Omega-3 (g)'
+        };
+        const ORDER = ['C_mg','Iron_mg','Magnesium_mg','Potassium_mg','Zinc_mg','Selenium_mcg','Choline_mg','B1_mg','B6_mg','B9_mcg','B12_mcg','A_RAE_mcg','D_IU','Omega3_g'];
+
+        function createRow(label, value){
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="padding:10px 12px; background:#fff; border:1px solid rgba(0,0,0,.06); border-right:none; border-radius:10px 0 0 10px; font-weight:600">${label}</td>
+            <td style="padding:10px 12px; background:#fff; border:1px solid rgba(0,0,0,.06); border-left:none; border-radius:0 10px 10px 0; text-align:right">${value}</td>`;
+          return tr;
+        }
+
+        function render(item){
+          const tbody = document.querySelector('#'+TABLE_ID+' tbody');
+          tbody.innerHTML = '';
+          const nutrients = item.nutrients || {};
+
+          // Sort keys by preferred ORDER, then any extras
+          const keys = Object.keys(nutrients).sort((a,b)=>{
+            const ai = ORDER.indexOf(a), bi = ORDER.indexOf(b);
+            if(ai === -1 && bi === -1) return a.localeCompare(b);
+            if(ai === -1) return 1;
+            if(bi === -1) return -1;
+            return ai - bi;
+          });
+
+          if(keys.length === 0){
+            tbody.appendChild(createRow('No nutrient data available', '—'));
+            return;
+          }
+
+          keys.forEach(k=>{
+            const raw = nutrients[k];
+            const isNumber = typeof raw === 'number' && !Number.isNaN(raw);
+            const val = isNumber ? (Math.abs(raw) >= 10 ? raw.toFixed(0) : raw.toFixed(2)) : String(raw);
+            const label = LABELS[k] || k.replace(/_/g,' ');
+            tbody.appendChild(createRow(label, val));
+          });
+        }
+
+        async function init(){
+          try{
+            const res = await fetch('data/nutrients.json', {cache:'no-store'});
+            const all = await res.json();
+            const redProduce = all.filter(p => p.color && p.color.toLowerCase() === 'red');
+
+            if(!redProduce.length){
+              const tbody = document.querySelector('#'+TABLE_ID+' tbody');
+              tbody.innerHTML = '<tr><td class="lead">No red produce found in data/nutrients.json</td></tr>';
+              return;
+            }
+
+            const select = document.getElementById(SELECT_ID);
+
+            redProduce.forEach((it, i)=>{
+              const opt = document.createElement('option');
+              opt.value = i;
+              opt.textContent = it.name;
+              select.appendChild(opt);
+            });
+
+            if(redProduce.length > 0){
+              select.value = "0";
+              render(redProduce[0]);
+              select.addEventListener('change', ()=> render(redProduce[Number(select.value)]));
+            }
+          } catch(e){
+            console.error(e);
+            const tbody = document.querySelector('#'+TABLE_ID+' tbody');
+            tbody.innerHTML = '<tr><td class="lead">Couldn’t load nutrients.json — please run a local server.</td></tr>';
+          }
+        }
+
+        init();
+      })();
+    </script>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <p>&copy; <span id="footer-year"></span> Taste of the Garden. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <a href="catalog.html">CSA Shares</a>
-        <a href="nutrition.html">Nutrition Guide</a>
-        <a href="event.html">Visit the Garden</a>
-      </nav>
+      <strong>Robb Garden</strong><br />
+      <span class="lead">Student-led sustainable agriculture at University of the Pacific.</span>
     </div>
   </footer>
-
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const siteNav = document.getElementById('site-nav');
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav?.classList.toggle('site-nav--open', !expanded);
-    });
-
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.site-nav ul a').forEach((link) => {
-      const target = link.getAttribute('href');
-      if (target === currentPath) {
-        link.classList.add('active');
-      }
-    });
-
-    const footerYear = document.getElementById('footer-year');
-    if (footerYear) {
-      footerYear.textContent = new Date().getFullYear();
-    }
-  </script>
 </body>
 </html>

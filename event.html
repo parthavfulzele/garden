@@ -1,220 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taste of the Garden • Events</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taste of the Garden | Robb Garden</title>
+  <style>
+    :root{ --bg:#f6f5f0; --ink:#1f2a1e; --muted:#5c6b5f; --brand:#2f7d32; --brand-2:#ffb74d; --card:#fff; --ring:#2f7d32; --radius:14px; --shadow:0 10px 25px rgba(0,0,0,.07); --maxw:1120px;}
+    *{box-sizing:border-box} body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 800px at 90% -10%, rgba(47,125,50,.08), transparent 60%), var(--bg)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px} a{text-decoration:none;color:inherit}
+    header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 84%, white);border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:saturate(1.2) blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-badge{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#3ca34e)}
+    .button{padding:10px 14px;border-radius:12px;background:var(--brand);color:#fff;font-weight:600}
+    h1{font-size:clamp(1.7rem,3.6vw,2.8rem);margin:22px 0 8px}
+    .lead{color:var(--muted);margin:0 0 20px}
+    .section{padding:48px 0}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+    .span-6{grid-column:span 6} @media(max-width:900px){.span-6{grid-column:1/-1}}
+    .card{background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:18px}
+    details{background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:14px}
+    details+details{margin-top:12px}
+  </style>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
+  <header>
+    <div class="container nav">
       <div class="brand">
         <a class="brand__link" href="index.html">
-          <span class="brand__icon" aria-hidden="true">🌱</span>
-          <span class="brand__text">Taste of the Garden</span>
+          <img src="assets/images/Sustainability-Lockup-Responsive-Orange1.png" alt="Sustainability Department Logo" style="height:60px; display:block;" />
         </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Toggle navigation</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="catalog.html">Catalog</a></li>
-          <li><a href="nutrition.html">Nutrition</a></li>
-          <li><a href="event.html">Events</a></li>
-        </ul>
-        <a class="nav-cta" href="index.html#newsletter">Join the Garden</a>
-      </nav>
+      <nav><a class="button" href="index.html">Home</a></nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1>Gather in the garden</h1>
-        <p>Workshops, volunteer mornings, and tastings happen in every season. Come dig in, learn, and celebrate with the community.</p>
+  <main class="container">
+    <h1>Taste of the Garden — Fall</h1>
+    <p class="lead">Celebrate the harvest with tastings, recipe cards, and guided garden tours.</p>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card span-6">
+          <strong>When</strong>
+          <p class="lead">Saturday, Sept 28 · 11:00–2:00</p>
+        </div>
+        <div class="card span-6">
+          <strong>Where</strong>
+          <p class="lead">Robb Garden, Stockton Campus</p>
+        </div>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="button" style="background:var(--brand-2);color:#3a2a00" href="#faq">Event FAQ</a>
       </div>
     </section>
 
-    <section class="section container">
-      <h2>Upcoming happenings</h2>
-      <div class="timeline">
-        <article class="timeline__event">
-          <div class="timeline__date">May 18</div>
-          <div class="timeline__content">
-            <h3>Soil Health Intensive</h3>
-            <p>Hands-on demo covering compost teas, cover crops, and how we build living soil beds.</p>
-            <span class="tag">Workshop</span>
-          </div>
-        </article>
-        <article class="timeline__event">
-          <div class="timeline__date">May 24</div>
-          <div class="timeline__content">
-            <h3>Friday Flower Hour</h3>
-            <p>Pick your own bouquet while we chat pollinators and build mason bee hotels for the garden.</p>
-            <span class="tag">Community</span>
-          </div>
-        </article>
-        <article class="timeline__event">
-          <div class="timeline__date">June 1</div>
-          <div class="timeline__content">
-            <h3>Kids in the Kitchen</h3>
-            <p>Family-friendly cooking class featuring rainbow veggie wraps and a zero-waste snack board.</p>
-            <span class="tag">Family</span>
-          </div>
-        </article>
-        <article class="timeline__event">
-          <div class="timeline__date">June 8</div>
-          <div class="timeline__content">
-            <h3>Full Moon Harvest Dinner</h3>
-            <p>Dusk tour of the beds followed by a seasonal tasting menu prepared by our chef partners.</p>
-            <span class="tag">Special Event</span>
-          </div>
-        </article>
+
+    <section class="section" id="schedule">
+      <h2>Schedule</h2>
+      <div class="card">
+        <ul>
+          <li>11:00 — Welcome & Garden Walk</li>
+          <li>12:00 — Tasting Table (seasonal produce)</li>
+          <li>1:00 — Quick Demos & Q&A</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section section--accent">
-      <div class="container split">
-        <div>
-          <h2>Volunteer mornings</h2>
-          <p>Every Saturday we gather to weed, plant, and harvest. Training is always hands-on—bring a hat, water bottle, and curiosity.</p>
-          <ul class="list">
-            <li>8:30 AM welcome circle &amp; task overview</li>
-            <li>9:00 AM field work with crew leads</li>
-            <li>11:30 AM community lunch with fresh produce</li>
-          </ul>
-          <a class="btn" href="mailto:volunteer@tasteofthegarden.com">Sign up to help</a>
-        </div>
-        <aside class="note">
-          <h3>Group visits</h3>
-          <p>We love hosting school field trips and corporate volunteer days. Reach out for custom dates and experiences.</p>
-          <a class="btn btn--ghost" href="mailto:hello@tasteofthegarden.com?subject=Group Visit Inquiry">Plan a visit</a>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section container">
-      <div class="split split--reverse">
-        <div>
-          <h2>Your host growers</h2>
-          <p>Our crew blends farmers, soil scientists, and nutritionists—united by curiosity and care for land and people.</p>
-        </div>
-        <div class="team-grid" aria-live="polite">
-          <article class="team-card">
-            <div class="team-card__top">
-              <div class="team-card__avatar">AL</div>
-              <div>
-                <h3>Avery Lane</h3>
-                <div class="team-card__role">Head Grower</div>
-              </div>
-            </div>
-            <p>Leads crop planning and seed trials that keep our beds diverse and resilient.</p>
-            <div class="team-card__tags">
-              <span class="team-card__tag">Regenerative</span>
-              <span class="team-card__tag">Seed Saving</span>
-            </div>
-          </article>
-          <article class="team-card">
-            <div class="team-card__top">
-              <div class="team-card__avatar">MS</div>
-              <div>
-                <h3>Mina Santos</h3>
-                <div class="team-card__role">Soil Ecologist</div>
-              </div>
-            </div>
-            <p>Monitors compost health and microbe activity to keep nutrients flowing to every plant.</p>
-            <div class="team-card__tags">
-              <span class="team-card__tag">Soil Food Web</span>
-              <span class="team-card__tag">Lab Tests</span>
-            </div>
-          </article>
-          <article class="team-card">
-            <div class="team-card__top">
-              <div class="team-card__avatar">JK</div>
-              <div>
-                <h3>Jamal King</h3>
-                <div class="team-card__role">Community Chef</div>
-              </div>
-            </div>
-            <p>Designs seasonal recipes and leads cooking nights that make veggies irresistible.</p>
-            <div class="team-card__tags">
-              <span class="team-card__tag">Fermentation</span>
-              <span class="team-card__tag">CSA Shares</span>
-            </div>
-          </article>
-          <article class="team-card">
-            <div class="team-card__top">
-              <div class="team-card__avatar">NL</div>
-              <div>
-                <h3>Nia Lopez</h3>
-                <div class="team-card__role">Nutrition Guide</div>
-              </div>
-            </div>
-            <p>Hosts office hours and supports families in adapting shares to their wellness goals.</p>
-            <div class="team-card__tags">
-              <span class="team-card__tag">Meal Planning</span>
-              <span class="team-card__tag">Youth Programs</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--map">
-      <div class="container">
-        <h2>Find us</h2>
-        <p>132 Harvest Lane, Willow Creek, OR. Parking available on-site. Biking encouraged!</p>
-        <div class="map-placeholder" role="img" aria-label="Map showing Taste of the Garden location">
-          <span>Taste of the Garden</span>
-        </div>
-      </div>
+    <section class="section" id="faq">
+      <h2>FAQ</h2>
+      <details open>
+        <summary>Who can attend?</summary>
+        <p>Students, staff, and faculty — all are welcome.</p>
+      </details>
+      <details>
+        <summary>Cost?</summary>
+        <p>Free.</p>
+      </details>
+      <details>
+        <summary>Do I need to bring anything?</summary>
+        <p>Just enthusiasm! Closed-toe shoes recommended.</p>
+      </details>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <p>&copy; <span id="footer-year"></span> Taste of the Garden. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <a href="catalog.html">CSA Shares</a>
-        <a href="nutrition.html">Nutrition Guide</a>
-        <a href="event.html">Visit the Garden</a>
-      </nav>
+      <strong>Robb Garden</strong><br />
+      <span class="lead">Student-led sustainable agriculture at University of the Pacific.</span>
     </div>
   </footer>
-
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const siteNav = document.getElementById('site-nav');
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav?.classList.toggle('site-nav--open', !expanded);
-    });
-
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.site-nav ul a').forEach((link) => {
-      const target = link.getAttribute('href');
-      if (target === currentPath) {
-        link.classList.add('active');
-      }
-    });
-
-    const footerYear = document.getElementById('footer-year');
-    if (footerYear) {
-      footerYear.textContent = new Date().getFullYear();
-    }
-  </script>
 </body>
 </html>

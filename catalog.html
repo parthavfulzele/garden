@@ -1,315 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taste of the Garden • Catalog</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Library Catalog | Robb Garden</title>
+  <style>
+    :root{ --bg:#f6f5f0; --ink:#1f2a1e; --muted:#5c6b5f; --brand:#2f7d32; --card:#fff; --ring:#2f7d32; --radius:14px; --shadow:0 10px 25px rgba(0,0,0,.07); --maxw:1120px; }
+    *{box-sizing:border-box} body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 800px at 90% -10%, rgba(47,125,50,.08), transparent 60%), var(--bg)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px} a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 84%, white);border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:saturate(1.2) blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-badge{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#3ca34e)}
+    .button{padding:10px 14px;border-radius:12px;background:var(--brand);color:#fff;font-weight:600}
+    h1{font-size:clamp(1.6rem,3.2vw,2.4rem);margin:22px 0 8px}
+    .lead{color:var(--muted);margin:0 0 20px}
+    .section{padding:48px 0}
+    .search{display:flex;gap:10px;align-items:center;background:#fff;border-radius:12px;padding:10px;border:1px solid rgba(0,0,0,.08)}
+    .search input{flex:1;border:none;outline:none;font-size:1rem;padding:8px;background:transparent}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.85rem;border:1px solid rgba(0,0,0,.1);padding:2px 6px;border-radius:6px;background:#fafafa}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+    .span-3{grid-column:span 3} .span-4{grid-column:span 4} @media(max-width:900px){.span-3,.span-4{grid-column:1/-1}}
+    .card{background:#fff;border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+    .card .media{aspect-ratio:3/2;background:#e5efe6}
+    .card .body{padding:14px}
+    .pill{display:inline-block;font-size:.85rem;padding:6px 10px;border-radius:999px;background:#eef7ef;color:var(--brand);border:1px solid #dff0e1}
+  </style>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
+  <header>
+    <div class="container nav">
       <div class="brand">
         <a class="brand__link" href="index.html">
-          <span class="brand__icon" aria-hidden="true">🌱</span>
-          <span class="brand__text">Taste of the Garden</span>
+          <img src="assets/images/Sustainability-Lockup-Responsive-Orange1.png" 
+               alt="Sustainability Department Logo" 
+               style="height:60px; display:block;" />
         </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Toggle navigation</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="catalog.html">Catalog</a></li>
-          <li><a href="nutrition.html">Nutrition</a></li>
-          <li><a href="event.html">Events</a></li>
-        </ul>
-        <a class="nav-cta" href="index.html#newsletter">Join the Garden</a>
-      </nav>
+      <nav><a class="button" href="index.html">Home</a></nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1>Seasonal produce catalog</h1>
-        <p>Explore what is currently growing strong. Filter by category or season to plan your next CSA pickup or farmers market visit.</p>
-      </div>
-    </section>
+  <main class="container">
+    <h1>Library Catalog</h1>
+    <p class="lead">Browse books, seed library, and tool checkouts. You can wire this search to your backend later.</p>
 
-    <section class="section container">
-      <form class="filters" aria-label="Catalog filters">
-        <div class="filters__group">
-          <label for="filter-category">Category</label>
-          <select id="filter-category" name="category">
-            <option value="all">All produce</option>
-            <option value="vegetable">Vegetables</option>
-            <option value="fruit">Fruits</option>
-            <option value="herb">Herbs</option>
-            <option value="flower">Edible flowers</option>
-          </select>
-        </div>
-        <div class="filters__group">
-          <label for="filter-season">Season</label>
-          <select id="filter-season" name="season">
-            <option value="all">Year-round</option>
-            <option value="spring">Spring</option>
-            <option value="summer">Summer</option>
-            <option value="fall">Fall</option>
-            <option value="winter">Winter</option>
-          </select>
-        </div>
-        <div class="filters__group filters__group--search">
-          <label for="filter-search">Search</label>
-          <input id="filter-search" name="search" type="search" placeholder="Search by name or use" />
-        </div>
+    <section class="section">
+      <form class="search" role="search" aria-label="Catalog search" onsubmit="event.preventDefault(); mockSearch()">
+        <input id="q" type="search" placeholder="Search by title, author, topic…" aria-label="Search catalog" />
+        <span class="kbd">Enter</span>
+        <button class="button" type="submit">Search</button>
       </form>
-
-      <div id="catalog-status" class="catalog-empty">Enable JavaScript to explore the full catalog.</div>
-      <div id="catalog-grid" class="catalog-grid" aria-live="polite"></div>
     </section>
 
-    <section class="section section--accent">
-      <div class="container split">
-        <div>
-          <h2>CSA shares that fit your table</h2>
-          <p>Choose weekly or biweekly pickups. We harvest to order so your basket reflects what the soil is ready to share.</p>
-          <ul class="list">
-            <li>Small share feeds 1–2 produce lovers</li>
-            <li>Family share keeps 3–4 folks stocked for the week</li>
-            <li>Add-on eggs, mushrooms, and flower bunches anytime</li>
-          </ul>
-        </div>
-        <aside class="note">
-          <h3>Have a favorite?</h3>
-          <p>Email <a href="mailto:orders@tasteofthegarden.com">orders@tasteofthegarden.com</a> and we will tuck it into your next pickup.</p>
-        </aside>
+    <section class="section" id="results">
+      <div class="grid">
+        <!-- Placeholder results -->
+        <article class="card span-4">
+          <div class="media"></div>
+          <div class="body">
+            <strong>Edible Schoolyard</strong><br /><span class="pill">Book</span>
+          </div>
+        </article>
+        <article class="card span-4">
+          <div class="media"></div>
+          <div class="body">
+            <strong>Seed Saving Basics</strong><br /><span class="pill">Guide</span>
+          </div>
+        </article>
+        <article class="card span-4">
+          <div class="media"></div>
+          <div class="body">
+            <strong>Compost Thermometer</strong><br /><span class="pill">Tool</span>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <p>&copy; <span id="footer-year"></span> Taste of the Garden. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <a href="catalog.html">CSA Shares</a>
-        <a href="nutrition.html">Nutrition Guide</a>
-        <a href="event.html">Visit the Garden</a>
-      </nav>
+      <strong>Robb Garden</strong><br />
+      <span class="lead">Student-led sustainable agriculture at University of the Pacific.</span>
     </div>
   </footer>
 
-  <script>
-    const produceCatalog = [
-      {
-        name: 'Rainbow Chard',
-        category: 'vegetable',
-        season: 'spring',
-        price: 4.5,
-        unit: 'bundle',
-        description: 'Tender stems in jewel tones with mild earthy sweetness.',
-        uses: ['Quick sauté with garlic', 'Layer into grain bowls'],
-      },
-      {
-        name: 'Sunrise Cherry Tomatoes',
-        category: 'fruit',
-        season: 'summer',
-        price: 5,
-        unit: 'pint',
-        description: 'Candy-sweet tomatoes in yellow, orange, and blush.',
-        uses: ['Snack straight from the vine', 'Roast for focaccia'],
-      },
-      {
-        name: 'Genovese Basil',
-        category: 'herb',
-        season: 'summer',
-        price: 3.5,
-        unit: 'bunch',
-        description: 'Classic Italian basil with glossy, aromatic leaves.',
-        uses: ['Blend into pesto', 'Tuck into caprese'],
-      },
-      {
-        name: 'Buttercrisp Lettuce',
-        category: 'vegetable',
-        season: 'spring',
-        price: 4,
-        unit: 'head',
-        description: 'Soft, velvety leaves perfect for wraps and salads.',
-        uses: ['Build lettuce cups', 'Pair with citrus dressings'],
-      },
-      {
-        name: 'Golden Beets',
-        category: 'vegetable',
-        season: 'fall',
-        price: 4.75,
-        unit: 'bunch',
-        description: 'Sunny beets with mellow sweetness and tender greens.',
-        uses: ['Roast with rosemary', 'Shave raw into salads'],
-      },
-      {
-        name: 'Candy Stripe Figs',
-        category: 'fruit',
-        season: 'fall',
-        price: 6,
-        unit: 'half-pint',
-        description: 'Limited heirloom figs with vanilla-honey notes.',
-        uses: ['Serve with goat cheese', 'Caramelize for desserts'],
-      },
-      {
-        name: 'Smoked Paprika Peppers',
-        category: 'vegetable',
-        season: 'summer',
-        price: 5.25,
-        unit: 'quart',
-        description: 'Deep red peppers sun-dried then lightly smoked on oak.',
-        uses: ['Stuff with quinoa', 'Blend into romesco'],
-      },
-      {
-        name: 'Citrus Gem Marigolds',
-        category: 'flower',
-        season: 'summer',
-        price: 4,
-        unit: 'clamshell',
-        description: 'Edible petals with bright tangerine zest and finish.',
-        uses: ['Top cakes and tarts', 'Infuse into syrups'],
-      },
-      {
-        name: 'Shiitake Mushrooms',
-        category: 'vegetable',
-        season: 'fall',
-        price: 8,
-        unit: 'pint',
-        description: 'Log-grown mushrooms with savory umami depth.',
-        uses: ['Sear with tamari butter', 'Fold into risotto'],
-      },
-      {
-        name: 'Winter Rainbow Radishes',
-        category: 'vegetable',
-        season: 'winter',
-        price: 3.75,
-        unit: 'bundle',
-        description: 'Crisp roots with peppery bite and watercolor hues.',
-        uses: ['Slice into tacos', 'Quick pickle for bowls'],
-      },
-      {
-        name: 'Scarlet Runner Beans',
-        category: 'vegetable',
-        season: 'summer',
-        price: 9,
-        unit: 'pound',
-        description: 'Velvety beans with chestnut-like texture and speckles.',
-        uses: ['Simmer with aromatics', 'Puree for dips'],
-      },
-      {
-        name: 'Cold Moon Citrus',
-        category: 'fruit',
-        season: 'winter',
-        price: 7,
-        unit: 'bag',
-        description: 'Blend of blood orange, yuzu, and meyer lemon.',
-        uses: ['Press into tonics', 'Candy the peels'],
-      },
-    ];
-
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    });
-
-    const navToggle = document.querySelector('.nav-toggle');
-    const siteNav = document.getElementById('site-nav');
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav?.classList.toggle('site-nav--open', !expanded);
-    });
-
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.site-nav ul a').forEach((link) => {
-      const target = link.getAttribute('href');
-      if (target === currentPath) {
-        link.classList.add('active');
-      }
-    });
-
-    const footerYear = document.getElementById('footer-year');
-    if (footerYear) {
-      footerYear.textContent = new Date().getFullYear();
-    }
-
-    const statusEl = document.getElementById('catalog-status');
-    const gridEl = document.getElementById('catalog-grid');
-    const filterCategory = document.getElementById('filter-category');
-    const filterSeason = document.getElementById('filter-season');
-    const filterSearch = document.getElementById('filter-search');
-
-    const renderCatalog = () => {
-      const category = filterCategory.value;
-      const season = filterSeason.value;
-      const search = filterSearch.value.trim().toLowerCase();
-
-      const matches = produceCatalog.filter((item) => {
-        const matchesCategory = category === 'all' || item.category === category;
-        const matchesSeason = season === 'all' || item.season === season;
-        const matchesSearch =
-          !search ||
-          item.name.toLowerCase().includes(search) ||
-          item.description.toLowerCase().includes(search) ||
-          item.uses.some((use) => use.toLowerCase().includes(search));
-
-        return matchesCategory && matchesSeason && matchesSearch;
-      });
-
-      gridEl.innerHTML = '';
-
-      if (matches.length === 0) {
-        statusEl.hidden = false;
-        statusEl.textContent = 'No produce matches your filters just yet.';
-        return;
-      }
-
-      statusEl.hidden = true;
-      statusEl.textContent = '';
-
-      const fragment = document.createDocumentFragment();
-      matches.forEach((item) => {
-        const card = document.createElement('article');
-        card.className = 'catalog-card';
-        card.innerHTML = `
-          <div class="catalog-card__header">
-            <h2>${item.name}</h2>
-            <span class="catalog-card__price">${formatter.format(item.price)} / ${item.unit}</span>
-          </div>
-          <p>${item.description}</p>
-          <div class="catalog-card__meta">
-            <span class="catalog-card__chip">${item.category}</span>
-            <span class="catalog-card__chip">${item.season}</span>
-          </div>
-          <p><strong>Kitchen ideas:</strong> ${item.uses.join(' • ')}</p>
-        `;
-        fragment.appendChild(card);
-      });
-
-      gridEl.appendChild(fragment);
-    };
-
-    [filterCategory, filterSeason, filterSearch].forEach((el) => {
-      el?.addEventListener('input', renderCatalog);
-      el?.addEventListener('change', renderCatalog);
-    });
-
-    statusEl.hidden = true;
-    renderCatalog();
-  </script>
+  <script src="js/catalog.js"></script>
 </body>
 </html>

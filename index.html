@@ -1,190 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Robb Garden</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Robb Garden | University of the Pacific</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav">
       <div class="brand">
-        <a class="brand__link" href="index.html">
-          <span class="brand__icon" aria-hidden="true">🌱</span>
-          <span class="brand__text">The Robb Garden</span>
-        </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Toggle navigation</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <img src="assets/images/Sustainability-Lockup-Responsive-Orange1.png" alt="Sustainability Department Logo" style="height:60px; display:block;" />
       </div>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="catalog.html">Catalog</a></li>
-          <li><a href="nutrition.html">Nutrition</a></li>
-          <li><a href="event.html">Events</a></li>
-        </ul>
-        <a class="nav-cta" href="index.html#newsletter">Join the Garden</a>
+      <nav aria-label="Primary">
+        <a class="button" href="#visit">Visit the Garden</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero__media">
-        <video class="hero__video" autoplay muted loop playsinline>
-          <source src="assets/Videos/Taste_of_the_garden.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="hero__content container">
-        <h1 class = "dark">Eat seasonally, grow sustainably.</h1>
-        <p class = "dark">
-          We are a community-supported garden dedicated to growing nutrient-dense produce, sharing regenerative practices,
-          and inviting neighbors to get their hands in the soil.
-        </p>
-        <div class="hero__actions">
-          <a class="btn" href="catalog.html">Shop the Harvest</a>
-          <a class="btn btn--ghost" href="event.html">Volunteer with Us</a>
+      <div class="container hero-wrap">
+        <div class="hero-card">
+          <div>
+            <h1>Growing food, community, and climate resilience.</h1>
+            <p class="sub">Hands-on learning, sustainable agriculture, and fresh produce for our campus community.</p>
+          </div>
+          <div class="hero-cta">
+            <a class="btn primary" href="nutrition.html">Explore Nutrition Mission</a>
+            <a class="btn accent" href="https://pacific.galaxydigital.com/need/detail/?need_id=1090064" target="_blank" rel="noopener">Volunteer with Us</a>
+          </div>
+          <div style="display:flex; gap:10px; color:var(--muted); font-size:.95rem;">
+            <span class="tag">Student-led</span>
+            <span class="tag">Organic practices</span>
+            <span class="tag">Open to all</span>
+          </div>
+        </div>
+        <!-- Instagram reel on the right -->
+        <div class="hero-img ig-wrap">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DJPhITjtzb7/?igsh=MWh5czFtc3l1bHU3Yw==" data-instgrm-version="14" style="background:#FFF; border:0; margin:0; padding:0;">
+            <a href="https://www.instagram.com/reel/DJPhITjtzb7/?igsh=MWh5czFtc3l1bHU3Yw==" rel="noopener" target="_blank" aria-label="Open Instagram reel"></a>
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <section class="section container">
-      <h2>Why our garden thrives</h2>
-      <div class="grid grid--3">
-        <article class="card">
-          <h3>Regenerative Soil</h3>
-          <p>Compost teas, crop rotations, and cover crops keep our soil alive and your produce full of flavor.</p>
-        </article>
-        <article class="card">
-          <h3>Harvested to Order</h3>
-          <p>We pick your vegetables the morning of pickup so they spend more time on the vine and less time on a truck.</p>
-        </article>
-        <article class="card">
-          <h3>Community First</h3>
-          <p>From seed swaps to free gardening classes, we grow together and share what we know.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--accent">
+    <!-- HIGHLIGHT CARDS -->
+    <section class="section">
       <div class="container">
-        <div class="section__header">
-          <h2>Seasonal spotlight</h2>
-          <a class="section__cta" href="catalog.html">See full catalog →</a>
-        </div>
-        <div class="highlight-grid">
-          <article class="highlight">
-            <div class="highlight__badge">🌿</div>
-            <h3>Buttercrisp Lettuce</h3>
-            <p>Soft, velvety leaves perfect for wraps and salads. Picked at dawn for peak crunch.</p>
+        <div class="grid">
+          <!-- Nutrition Mission -->
+          <article class="card span-4">
+            <div class="media" aria-hidden="true"></div>
+            <div class="body">
+              <h2>Nutrition Mission</h2>
+              <p>See how our produce supports student wellness—with evidence-based micronutrient profiles and simple recipes.</p>
+            </div>
+            <div class="actions">
+              <a class="link" href="nutrition.html">Learn more</a>
+              <span class="tag">Micronutrients</span>
+            </div>
           </article>
-          <article class="highlight">
-            <div class="highlight__badge">🍅</div>
-            <h3>Sunrise Cherry Tomatoes</h3>
-            <p>Candy-sweet tomatoes in yellow, orange, and blush that never see a grocery truck.</p>
+
+          <!-- Taste of the Garden -->
+          <article class="card span-4">
+            <div class="media" aria-hidden="true"></div>
+            <div class="body">
+              <h2>Taste of the Garden</h2>
+              <p>Free seasonal tasting event for students, staff, and faculty. Live demos, tours, and volunteer sign-ups.</p>
+            </div>
+            <div class="actions">
+              <a class="link" href="event.html">Event details</a>
+              <span class="tag">Community</span>
+            </div>
           </article>
-          <article class="highlight">
-            <div class="highlight__badge">🌸</div>
-            <h3>Citrus Gem Marigolds</h3>
-            <p>Edible petals with bright tangerine zest to finish salads, cakes, and mocktails.</p>
+
+          <!-- Library Catalog -->
+          <article class="card span-4">
+            <div class="media" aria-hidden="true"></div>
+            <div class="body">
+              <h2>Library Catalog</h2>
+              <p>Browse our books, seed library, and tool checkouts. Search by topic, author, or crop.</p>
+            </div>
+            <div class="actions">
+              <a class="link" href="catalog.html">Open catalog</a>
+              <span class="tag">Resources</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section container">
-      <div class="split">
-        <div>
-          <h2>Workshops & Gatherings</h2>
-          <p>
-            Learn how to build raised beds, brew compost tea, and cook plant-forward meals. Every month we host community nights
-            and farm tours.
-          </p>
-          <ul class="list">
-            <li>Hands-on workshops taught by growers</li>
-            <li>Kid-friendly pollinator walks</li>
-            <li>Seasonal potlucks featuring garden produce</li>
-          </ul>
-          <a class="btn" href="event.html">View upcoming events</a>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(12,1fr); gap:18px;">
+          <div class="span-6">
+            <strong>Robb Garden</strong>
+            <p>Student-led sustainable agriculture at University of the Pacific.</p>
+          </div>
+          <div class="span-6" id="visit">
+            <strong>Visit & Contact</strong>
+            <p>Open volunteer hours weekly · Email: garden@pacific.edu</p>
+          </div>
         </div>
-        <aside class="note">
-          <h3>Get involved</h3>
-          <p>
-            Looking to volunteer or host a field trip? Email us at <a href="mailto:hello@tasteofthegarden.com">hello@tasteofthegarden.com</a>.
-          </p>
-        </aside>
       </div>
-    </section>
-
-    <section id="newsletter" class="section section--dark">
-      <div class="container newsletter">
-        <div>
-          <h2>Fresh harvest alerts</h2>
-          <p>Be the first to know when strawberries are ripe, classes open, and CSA shares refresh.</p>
-        </div>
-        <form class="newsletter__form">
-          <label class="sr-only" for="newsletter-email">Email address</label>
-          <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required />
-          <button type="submit" class="btn">Notify me</button>
-        </form>
-      </div>
-    </section>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="footer-year"></span> Taste of the Garden. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <a href="catalog.html">CSA Shares</a>
-        <a href="nutrition.html">Nutrition Guide</a>
-        <a href="event.html">Visit the Garden</a>
-      </nav>
-    </div>
-  </footer>
+  <!-- Instagram embed script -->
+  <script async src="https://www.instagram.com/embed.js"></script>
 
+  <!-- Sticky header shadow on scroll -->
   <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const siteNav = document.getElementById('site-nav');
-    navToggle?.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav?.classList.toggle('site-nav--open', !expanded);
-    });
-
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.site-nav ul a').forEach((link) => {
-      const target = link.getAttribute('href');
-      if (target === currentPath || (currentPath === 'index.html' && target === 'index.html')) {
-        link.classList.add('active');
+    (function(){
+      var header = document.querySelector('header');
+      function onScroll(){
+        var y = window.scrollY || document.documentElement.scrollTop;
+        if(y > 4 && !header.classList.contains('scrolled')) header.classList.add('scrolled');
+        else if(y <= 4 && header.classList.contains('scrolled')) header.classList.remove('scrolled');
       }
-    });
-
-    const footerYear = document.getElementById('footer-year');
-    if (footerYear) {
-      footerYear.textContent = new Date().getFullYear();
-    }
-
-    const newsletterForm = document.querySelector('.newsletter__form');
-    newsletterForm?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const formData = new FormData(newsletterForm);
-      const email = formData.get('email');
-      if (email) {
-        alert(`Thanks for joining the garden, ${email}!`);
-        newsletterForm.reset();
-      }
-    });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
   </script>
 </body>
 </html>
